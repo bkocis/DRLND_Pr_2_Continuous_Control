@@ -13,7 +13,7 @@ BUFFER_SIZE = int(1e5)  # replay buffer size
 BATCH_SIZE = 128        # minibatch size
 GAMMA = 0.99            # discount factor
 TAU = 1e-3              # for soft update of target parameters
-LR_ACTOR = 1e-4         # learning rate of the actor 
+LR_ACTOR = 1e-3 #1e-4         # learning rate of the actor 
 LR_CRITIC = 1e-3        # learning rate of the critic
 WEIGHT_DECAY = 0        # L2 weight decay
 EPSILON = 1.0           # explore->exploit noise process added to act step
@@ -64,15 +64,15 @@ class Agent():
         self.memory.add(state, action, reward, next_state, done)
 
         # Learn, if enough samples are available in memory
-#        if len(self.memory) > BATCH_SIZE:
-#            experiences = self.memory.sample()
-#            self.learn(experiences, GAMMA)
+        if len(self.memory) > BATCH_SIZE:
+            experiences = self.memory.sample()
+            self.learn(experiences, GAMMA)
             
-         # Learn at defined interval, if enough samples are available in memory
-        if len(self.memory) > BATCH_SIZE and timestep % LEARN_EVERY == 0:
-            for _ in range(LEARN_NUM):
-                experiences = self.memory.sample()
-                self.learn(experiences, GAMMA)           
+#         # Learn at defined interval, if enough samples are available in memory
+#        if len(self.memory) > BATCH_SIZE and timestep % LEARN_EVERY == 0:
+#            for _ in range(LEARN_NUM):
+#                experiences = self.memory.sample()
+#                self.learn(experiences, GAMMA)           
  
 
     def act(self, state, add_noise=True):
@@ -115,6 +115,10 @@ class Agent():
         # Minimize the loss
         self.critic_optimizer.zero_grad()
         critic_loss.backward()
+        
+        torch.nn.utils.clip_grad_norm_(self.critic_local.parameters(), 1)
+
+        
         self.critic_optimizer.step()
 
         # ---------------------------- update actor ---------------------------- #
@@ -150,7 +154,7 @@ class Agent():
 class OUNoise:
     """Ornstein-Uhlenbeck process."""
 
-    def __init__(self, size, seed, mu=0., theta=0.15, sigma=0.05):
+    def __init__(self, size, seed, mu=0., theta=0.15, sigma=0.2):
         """Initialize parameters and noise process.
         sigma default value 0.2
         """

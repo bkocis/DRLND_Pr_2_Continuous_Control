@@ -24,4 +24,4 @@ Reacher with one agent
 
 ![Reacher One arm](assets/reacher_one_arm.gif)
 
-![Reacher one arm](2019-11-30_22-42-52.gif)
+![Reacher one arm](assets/2019-11-30_22-42-52.gif)

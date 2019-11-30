@@ -21,3 +21,5 @@ Reacher with one agent
 ```
 
 - added epsilon nose multiplier with a decaying factor 
+
+![Reacher One arm](assets/reacher_one_arm.gif)

@@ -69,14 +69,19 @@ I was wondering how much would the solution be different for the case of 1 and 2
 
 ![Reacher One arm](assets/reacher_one_arm.gif)
 
+A network I used values consisted of 256 and 256 nodes for both the actor and critic. The parameter of `max_t` would be more 1000 or more. The environment was solved in 1330 episodes, and the plot is shown below:
 
-  - another solution is to use a smaller number of nodes in the network layers. I used values of 256 and 256 for both the actor and critic methods. The parameter of `max_t` would be more 1000 or more.
+<img src="assets/solution_1_arm.png" width=500>
+
+
 
 #### 2. Reacher with __twenty agents__
 
 The implementation of the agent and the model are the same as in the case of the one arm agent. The only difference is in the ddpg method.
 
 ![Reacher one arm](assets/reacher_20_arm.gif)
+
+<img src="assets/solution_20_arms.png" width=500>
 
 
 <br>

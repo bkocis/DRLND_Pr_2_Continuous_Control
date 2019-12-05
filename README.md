@@ -81,13 +81,14 @@ To set up your python environment to run the code in this repository, follow the
 	```bash
 	conda create --name drlnd python=3.6
 	source activate drlnd
+  ```
+     or
 
-  or
-  
+  ```bash
   virtualenv drlnd
   source drlnd/bin/actiate
-
 	```
+
 	- __Windows__:
 	```bash
 	conda create --name drlnd python=3.6

@@ -3,18 +3,13 @@
 
 ### Context
 
-This project shows the approach to teach an agent to solve continuous space problem of the Reacher environment, where the actions can take any value, on contrary to a discrete action-state space. For this project the Deep Deterministic Policy Gradient methods was used.
+This project demonstrates an approach to solve continuous space problem on the example of the Reacher environment. In the continuos action space the agent can take an action with any value, contrary to a discrete action-state space. For this project the Deep Deterministic Policy Gradient methods was used as an algorithm to train the agent(s).
 
 #### Deep Deterministic Policy Gradient (DDPG)
 
-DDPG belong to the group of actor-critic methods. Actor-critic methods leverage the strengths of both policy-based and value-based methods. It uses a stochastic behaviour policy for exploration and uses an estimate deterministic target policy.
+DDPG belongs to the group of actor-critic methods, which leverage the strengths of both policy-based and value-based methods. It uses a stochastic behaviour policy for exploration and uses an estimate deterministic target policy.
 
-The DDPG method relies on two networks: a “critic”, that estimates the value function or state-value, and an “actor” that updates the policy distribution in the direction suggested by the critic. The actor directly maps states to actions instead of returning a probability distribution across a discrete action space.
-
-The Policy Gradient method is the “actor” part of actor-critic method.
-
-Deterministig Policy Gradient
- "In the stochastic case, the policy gradient integrates over both state and action spaces, whereas in the deterministic case it only integrates over the state space." [Silver et al. (2014)](http://proceedings.mlr.press/v32/silver14.pdf)
+The DDPG method relies on two networks: a “critic”, that estimates the value function or state-value, and an “actor” that updates the policy distribution in the direction suggested by the critic. The actor directly maps states to actions instead of returning a probability distribution across a discrete action space. The actor represents the application of the Policy Gradient method. The DDPG uses deterministic policy gradients on contrary to stochastic policy methods: "In the stochastic case, the policy gradient integrates over both state and action spaces, whereas in the deterministic case it only integrates over the state space." [Silver et al. (2014)](http://proceedings.mlr.press/v32/silver14.pdf).
 
 ##### DDPG pseudo-algorithm
 After [Lillicrap et al. (2016)](https://arxiv.org/abs/1509.02971):
@@ -36,14 +31,14 @@ After [Lillicrap et al. (2016)](https://arxiv.org/abs/1509.02971):
 
 
 
-##### Resources
-To learn more about actor-critic methods and DDPG I used the following reading resources:
+##### Further resources
+To learned more about actor-critic methods and DDPG I from the following reading resources:
 
-- Continuous control with Deep reinforcement Learning [Lillicrap et al. (2016)](https://arxiv.org/abs/1509.02971)
-- Deterministic Policy Gradient Algorithms [Silver et al. (2014)](http://proceedings.mlr.press/v32/silver14.pdf)
+- Continuous control with Deep reinforcement Learning - [Lillicrap et al. (2016)](https://arxiv.org/abs/1509.02971)
+- Deterministic Policy Gradient Algorithms - [Silver et al. (2014)](http://proceedings.mlr.press/v32/silver14.pdf)
 - [Patric Emami's blog article](https://pemami4911.github.io/blog/2016/08/21/ddpg-rl.html)
 - [OpenAI Docs](https://spinningup.openai.com/en/latest/algorithms/ddpg.html)
-- [Chris Yoon's blog article](https://towardsdatascience.com/deep-deterministic-policy-gradients-explained-2d94655a9b7b)
+- [Chris Yoon's blog art usedicle](https://towardsdatascience.com/deep-deterministic-policy-gradients-explained-2d94655a9b7b)
 - [Markus Buchholz's blog article](https://medium.com/@markus.x.buchholz/deep-reinforcement-learning-deep-deterministic-policy-gradient-ddpg-algoritm-5a823da91b43)
 
 
@@ -154,4 +149,4 @@ In the beginning of the project I started working inside the Udacity Workspace e
 
 Nvidia RTX
 
-After I installed the environment on local computer with Nvidia 1050, the code implementation worked perfectly. I tested the code on Nvidia RTX 2080Ti as well. __In the case you  want to run the code on RTX cards, you should remove the pytorch 0.4 version that comes with the install of the [deep-reinforcement-learning](https://github.com/udacity/deep-reinforcement-learning) repo, and simply install the latest pytorch version.__ Prior to the reinstall of pytorch I encountered a problem, where the environment just did not want to run.
+After I installed the environment on local computer with Nvidia 1050, the code implementation worked perfectly. I tested the code on Nvidia RTX 2080Ti as well. In the case you  want to run the code on RTX cards, you should remove the pytorch 0.4 version that comes with the install of the [deep-reinforcement-learning](https://github.com/udacity/deep-reinforcement-learning) repo, and simply install the latest pytorch version. Prior to the reinstall of pytorch I encountered a problem, where the environment just did not want to run.

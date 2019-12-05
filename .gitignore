@@ -1,1 +1,10 @@
 data
+
+*Copy1*
+Continuous_Control.ipynb
+actor_ckpt.pth
+checkpoint_actor.pth
+checkpoint_critic.pth
+critic_ckpt.pth
+ddpg_agent.py
+model.py

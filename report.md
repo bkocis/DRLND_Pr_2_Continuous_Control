@@ -79,7 +79,7 @@ A network I used values consisted of 256 and 256 nodes for both the actor and cr
 
 The implementation of the agent and the model are the same as in the case of the one arm agent. The only difference is in the ddpg method.
 
-![Reacher one arm](assets/reacher_20_arm.gif)
+![Reacher one arm](assets/solution_20_arms_.gif)
 
 <img src="assets/solution_20_arms.png" width=500>
 

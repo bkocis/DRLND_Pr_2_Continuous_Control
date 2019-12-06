@@ -50,6 +50,8 @@ __The final report summarizing the code implementation and my solution of the en
 
 ---
 
+<br>
+<br>
 ### Installation and Setup
 
 1. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
